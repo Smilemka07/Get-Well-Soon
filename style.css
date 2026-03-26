@@ -1,7 +1,7 @@
 body {
   background-color: #46946d;
-  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  font-family:
+    "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #box {
@@ -17,6 +17,17 @@ body {
   border-radius: 16px;
   width: 588px;
   filter: drop-shadow(0.4rem 0.4rem 2rem #476e5a);
+}
+
+#container,
+.invisible-scrollbar {
+  max-height: 200px;
+  overflow-y: auto;
+  width: 500px;
+  color: #88978E;
+}
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 .formBanner {
   display: flex;
@@ -47,16 +58,17 @@ body {
   display: flex;
   justify-content: space-between;
   height: auto;
-  margin: 4rem 8rem 4rem 8rem;
+  margin: 2rem 4rem 2rem 4rem;
 }
 
 #nav h1 {
   color: white;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
 .calendar {
+  padding-top: 2rem;
   width: 3rem;
   object-fit: scale-down;
   cursor: pointer;
@@ -69,7 +81,8 @@ body {
   border: none;
   background-color: #73bd91;
   color: white;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: large;
   box-shadow: 0rem 0rem 20rem -0.8rem #21eb73;
   margin-bottom: 2rem;
   cursor: pointer;
@@ -78,6 +91,12 @@ body {
 @media (width <= 620px) {
   #listForm {
     width: 300px;
+  }
+
+  #container {
+    font-size: 0.8rem;
+    max-height: 130px;
+    width: 200px;
   }
 
   .formBanner {
@@ -99,9 +118,13 @@ body {
     width: 4.2rem;
     padding-right: 0.6rem;
   }
+
+  #add{
+    transform: scale(0.7);
+  }
+
 }
 
-
-li{
+li {
   list-style: none;
 }
