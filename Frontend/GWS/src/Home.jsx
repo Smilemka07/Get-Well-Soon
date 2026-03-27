@@ -1,13 +1,12 @@
 import "./Home.css";
+import {Link} from "react-router-dom";
 import { images } from "./assets/images";
 function Home() {
   return (
     <div class="parent">
       <div id="nav">
         <h1>GSW.</h1>
-        <a href="./calendar.html">
-          <img src={images.calendar} alt="Calendar" class="calendar" />
-        </a>
+        <Link to="/Calendar" ><img src={images.calendar1} alt="Calendar" class="calendar" /></Link>
       </div>
       <div id="box">
         <div id="listForm">
