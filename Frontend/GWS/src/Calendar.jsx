@@ -2,28 +2,28 @@ import "./Calendar.css";
 function Calendar() {
   return (
    <div id="box1">
-    <div class="class-calendar">
-      <div class="header">
+    <div className="class-calendar">
+      <div className="header">
         <button id="prevBtn">
-          <i class="fa-solid fa-chevron-left"></i>
+          <i className="fa-solid fa-chevron-left"></i>
         </button>
-        <div class="monthYear" id="monthYear"></div>
+        <div className="monthYear" id="monthYear"></div>
         <button id="nextBtn">
-          <i class="fa-solid fa-chevron-right"></i>
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
 
       <div class="days">
-        <div class="day">Mon</div>
-        <div class="day">Tue</div>
-        <div class="day">Wed</div>
-        <div class="day">Thu</div>
-        <div class="day">Fri</div>
-        <div class="day">Sat</div>
-        <div class="day">Sun</div>
+        <div className="day">Mon</div>
+        <div className="day">Tue</div>
+        <div className="day">Wed</div>
+        <div className="day">Thu</div>
+        <div className="day">Fri</div>
+        <div className="day">Sat</div>
+        <div className="day">Sun</div>
       </div>
 
-      <div class="dates" id="dates"></div>
+      <div className="dates" id="dates"></div>
     </div>
     </div>
   );
