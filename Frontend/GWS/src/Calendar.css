@@ -89,9 +89,14 @@ body {
 .date.inactive:hover {
   color: white;
 }
+@media (width<=900px){
+  .inner2{
+    transform: scale(0.9);
+  }
+}
 
 @media (width <= 620px) {
-  .calendar {
+  .inner2 {
     transform: scale(0.7);
   }
 }

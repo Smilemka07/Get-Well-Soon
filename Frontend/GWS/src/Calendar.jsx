@@ -21,6 +21,7 @@ const firstDay = new Date(year, month, 1);
 
   return (
     <div id="box1">
+      <div className="inner2">
       <div className="class-calendar">
         <div className="header">
           <button id="prevBtn" onClick={prevMonth}>
@@ -54,6 +55,7 @@ const firstDay = new Date(year, month, 1);
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
