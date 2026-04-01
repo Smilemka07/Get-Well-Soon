@@ -21,7 +21,7 @@ body {
 
 #container,
 .invisible-scrollbar {
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: auto;
   width: 500px;
   color: #88978E;
@@ -88,6 +88,21 @@ body {
   cursor: pointer;
 }
 
+.input {
+  width: 480px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  outline: none;
+  border: 1.6px solid #d0dbd4 ;
+  background-color: #d0dbd4;
+  font-style: italic;
+}
+input:focus {
+  border: 1.6px solid #73bd91;
+  background-color: #f0fffa;
+  outline: none;
+}
 @media (width <= 620px) {
   #listForm {
     width: 300px;
@@ -128,3 +143,4 @@ body {
 li {
   list-style: none;
 }
+
