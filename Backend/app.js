@@ -19,6 +19,10 @@ db.connect();
 
 app.post("/tasks", async (req, res) => {
   const { task_description } = req.body;
+  if (!task_description || !task_description.trim()) {
+    return res.status(400).json({ error: "Task cannot be empty" });
+  }
+
   try {
     const query = `INSERT INTO listItems (task_description) VALUES ($1)`;
     await db.query(query, [task_description]);
@@ -26,6 +30,16 @@ app.post("/tasks", async (req, res) => {
   } catch (err) {
     console.error("List error", err);
     res.status(500).send("Error adding the listItem");
+  }
+});
+
+app.get("/tasks", async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM listitems");
+    return res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Error fetching tasks");
   }
 });
 

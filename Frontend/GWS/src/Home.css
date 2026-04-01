@@ -24,7 +24,8 @@ body {
   max-height: 180px;
   overflow-y: auto;
   width: 500px;
-  color: #88978E;
+  color: #88978e;
+  font-size: larger;
 }
 .invisible-scrollbar::-webkit-scrollbar {
   display: none;
@@ -94,7 +95,7 @@ body {
   margin-bottom: 1rem;
   border-radius: 4px;
   outline: none;
-  border: 1.6px solid #d0dbd4 ;
+  border: 1.6px solid #d0dbd4;
   background-color: #d0dbd4;
   font-style: italic;
 }
@@ -102,45 +103,27 @@ input:focus {
   border: 1.6px solid #73bd91;
   background-color: #f0fffa;
   outline: none;
+  font-style: normal;
+}
+@media(width<= 900px){
+.inner{
+  transform: scale(0.75);
+  transform-origin: top;
+}
+#box{
+  margin-top: -1rem;
+}
 }
 @media (width <= 620px) {
-  #listForm {
-    width: 300px;
-  }
-
-  #container {
-    font-size: 0.8rem;
-    max-height: 130px;
-    width: 200px;
-  }
-
-  .formBanner {
-    width: 18.8rem;
-  }
-
-  .formBanner h2 {
-    font-size: 0.8rem;
-    padding-left: 1rem;
-  }
-
-  .imageFull {
-    display: inline;
-  }
-  .imageHalf {
-    display: none;
-  }
-  .capsules {
-    width: 4.2rem;
-    padding-right: 0.6rem;
-  }
-
-  #add{
-    transform: scale(0.7);
-  }
-
+.inner{
+  transform: scale(0.65);
+  transform-origin: top;
+}
+#box{
+  margin-top: -2rem;
+}
 }
 
 li {
   list-style: none;
 }
-

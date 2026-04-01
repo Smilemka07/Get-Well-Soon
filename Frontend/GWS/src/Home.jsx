@@ -19,20 +19,36 @@ function Home() {
     setTask("");
   };
 
-  //Get tasks to display on screen
-  const listItems = [1, 2, 3, 4, 5, 6, 7, 8, 2, 3, 4, 5, 6, 7, 8];
+  //Get tasks from db as array, to display on screen
+  const [listItems, setListItems] = useState([]);
+
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:3000/tasks");
+
+    const data = await res.json();
+
+    setListItems(data);
+  };
+
+  useEffect(() => {
+    fetchTasks();
+  }, []);
+
   return (
     // Home page structure
     <div className="parent">
       {/* nav */}
+      
       <div id="nav">
-        <h1>GSW.</h1>
+        <h1 className="inner">GSW.</h1>
         <Link to="/Calendar">
           <img src={images.calendar1} alt="Calendar" className="calendar" />
         </Link>
+      
       </div>
 
       {/* box in the centre */}
+      <div className="inner">
       <div id="box">
         <div id="listForm">
           <div className="formBanner">
@@ -50,13 +66,19 @@ function Home() {
           </div>
           <ul id="container" className="invisible-scrollbar">
             {listItems.map((item) => (
-              <li>{item}</li>
+              <li key={item.serial_number}>{item.task_description}</li>
             ))}
           </ul>
-          <input className="input" value={task} onChange={(e) => setTask(e.target.value)} placeholder="example: Paracetin-500, 1 tablet - Morning/Night" />
-          <button id="add" onClick={addTask}>
+          <input
+            className="input"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            placeholder="example: Paracetin-500, 1 tablet - Morning/Night"
+          />
+          <button disabled={!task.trim()} id="add" onClick={addTask}>
             <i className="fas fa-plus"></i> New Med
           </button>
+        </div>
         </div>
       </div>
     </div>
